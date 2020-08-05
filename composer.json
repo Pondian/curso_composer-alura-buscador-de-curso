@@ -14,6 +14,7 @@
         "symfony/css-selector": "^5.1"
     },
     "autoload": {
+        "files": ["functions.php"],
         "psr-4": {
             "Willian\\BuscadorDeCursos\\": "src/"
         }
@@ -24,11 +25,21 @@
         "phan/phan": "^3.1"
     },
     "scripts": {
-        "test":"phpunit teste\\TesteBuscadorDeCursos",
-        "cs":"phpcs --standard=PSR12 src/",
-        "phan":"phan --allow-polyfill-parser",
-        "check": ["@phan", "@cs", "@test"],
-        "post-update-cmd":["@test"]
+        "test": "phpunit teste\\TesteBuscadorDeCursos",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@phan",
+            "@cs",
+            "@test"
+        ],
+        "post-update-cmd": [
+            "@test"
+        ]
     },
-    "scripts-descriptions": {"check": "Roda as verificações do codigo. phan, phpcs e phpunit"}
+    "scripts-descriptions": {
+        "check": "Roda as verificações do codigo. phan, phpcs e phpunit"
+    },
+    "license": "GPL-3.0",
+    "bin": ["buscar-cursos.php"]
 }
